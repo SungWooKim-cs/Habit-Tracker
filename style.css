@@ -1,7 +1,7 @@
 body {
     margin: 0; 
     padding: 0;
-    background: url(photo3.jpg);
+    background: url(photo1.jpg);
     background-size: cover; 
     background-position: below; 
     height: 100vh;
@@ -11,7 +11,7 @@ body {
 .loginbox{
     width: 320px; 
     height: 420px; 
-    background-color: #000;
+    background-color:transparent;
     color: #fff;
     top : 50%;
     left: 50%;
@@ -51,7 +51,7 @@ h1{
 .loginbox input[type="text"], input[type="password"]
 {
     border: none;
-    norder-bottom: 1px solid #fff;
+    border-bottom: 1px solid #fff;
     background: transparent;
     outline: none;
     height: 40px;
