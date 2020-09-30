@@ -84,3 +84,8 @@ h1{
     line-height: 20px;
     color: darkgrey; 
 }
+
+.loginbox a:hover
+{
+    color: #ffc107;
+}
