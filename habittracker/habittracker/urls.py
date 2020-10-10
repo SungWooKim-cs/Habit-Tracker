@@ -15,8 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from habitapp.views import test_view
+from habitapp.views import test_login
 
 urlpatterns = [
     path('habitapp/', include('habitapp.urls')),
     path('admin/', admin.site.urls),
+    path('test/', test_view, name='test'),
+    path('test_login/', test_login, name='test_login'),
 ]
