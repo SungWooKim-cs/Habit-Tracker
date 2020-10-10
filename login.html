@@ -1,26 +1,61 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Login Page</title>
-    <link rel ="stylesheet" type ="text/css" href ="style.css">
-<body>
-    <div class="loginbox">
-    <img src="avatar.png" class="avatar">
+    <head>
+        <title>Login Page</title>
+        <link rel ="stylesheet" type ="text/css" href ="style.css">
+    </head>
+
+    <body>
+    <form class="loginbox" id="form" method= "post">
+    <!-- <img src="avatar.png" class="avatar"> -->
         <h1>Login Here</h1>
-        <form>
-            <p>Username</p>
-            <input type="text" name="" placeholder="Enter Username">
-            <p>Password</p>
-            <input type="password" name="" placeholder="Enter Password">
-            <input type="submit" name="" value="Login"><br>
-            <!-- <a href="#">Forgot Password?</a><br>  -->
-            <a href="register.html">Do not have an account?</a> 
-        </form>
-    </div>
-
-   
-
-</body>
-</head>
-</html>
     
+            <p>Username</p>
+            <input type="text" name="" placeholder="Enter Username" id="username">
+
+            <p>Password</p>
+            <input type="password" name="" placeholder="Enter Password" id="password"> 
+
+            <input type="submit" name="" value="Login"> <br>
+            <!-- <a href="#">Forgot Password?</a><br>  -->
+            <a href="register.html">Do not have an account?</a><br>            
+    </form>
+    </body>
+    <script>
+    var form = document.getElementById('form')
+    
+    form.addEventListener('submit',function(e){
+        // auto submission of the form 
+        e.preventDefault()
+
+        var username = document.getElementById('username').value
+        var password = document.getElementById('password').value
+        
+        // fetch post request
+        fetch("http://jsonplaceholder.typicode.com/posts", {
+            method: 'POST',
+            body:JSON.stringify({
+                username:username,
+                password:password, 
+            }),
+            headers:{
+                "Content-Type":"application/json; charset=UTF-8"
+            }    
+        })
+        .then(function(response){
+            return response.json()
+        })
+        .then(function(data){
+            console.log(data)
+            // var results = document.getElementById('result')
+
+            // results.innerHTML = 
+        })
+    })
+    </script>
+    
+        
+
+
+</html>
+ 
