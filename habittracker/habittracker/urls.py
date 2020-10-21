@@ -15,13 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from habitapp.views import index
+from habitapp.views import login
+from habitapp.views import login_form
 from habitapp.views import test_view
 from habitapp.views import test_login
 
-
-
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('login/', login_form, name='login'),
     path('test/', test_view, name='test'),
     path('test_login/', test_login, name='test_login'),
 
