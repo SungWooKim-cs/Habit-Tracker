@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head> 
+    <meta charset = "UTF-8">
+    <title> Let's make a calendar</title>
+    <link rel="stylesheet" href="datepickk.min.css">
+    <link rel="stylesheet" href="date.css">
+</head>
+
+<body>
+    <div id="datepicker"></div>
+    <script src="datepickk.min.js"></script>
+    <script>
+        var highlight = {
+            start: new Date (2020,10,9),
+            end: new Date (2020,10,9),
+            backgroundColor: '#3faa56',
+            color: '#ffffff',
+            legend: 'CSS conf.'
+        };
+
+        var highlight2 = {
+            dates: [
+                {
+                    start: new Date (2020,10,1),
+                    end: new Date (2020,10,1),
+                },
+                {
+                    start: new Date (2020,10,8),
+                    end: new Date (2020,10,8),
+                },
+                {
+                    start: new Date (2020,10,15),
+                    end: new Date (2020,10,15),
+                },
+                {
+                    start: new Date (2020,10,22),
+                    end: new Date (2020,10,22),
+                },
+                {
+                    start: new Date (2020,10,29),
+                    end: new Date (2020,10,29),
+                }
+
+            ],
+           
+            backgroundColor: '#e99c00',
+            color: '#ffffff',
+            legend: 'Holidays.' 
+        };
+
+        var datepicker = new Datepickk({
+            container: document.querySelector('#datepicker'),
+            inline: true, 
+            range: true, 
+            highlight: [highlight,highlight2]
+        });
+        datepicker.setDate = new Date(2020,10,9)
+    </script>
+
+</body>
+</html>
+
